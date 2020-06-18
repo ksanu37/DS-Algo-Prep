@@ -1,0 +1,16 @@
+Access Modifiers in C++
+
+Used for Data Hiding. The access specifiers or access modifiers are of three types basically.
+
+1. PUBLIC
+2. PRIVATE
+3. PROTECTED
+
+
+PUBLIC :- Any member with public access modifiers can be accessed using an object of that class from anywhere. 
+
+PRIVATE :-  No object can directly access the private members of the class, only the member or the friend functions are allowed to 
+            access the private members
+
+PROTECTED:- Protected members are same as private members, the difference being that the protected members of a super class can be 
+            accessed from a sub-class, while the protected members can't be accessed.
