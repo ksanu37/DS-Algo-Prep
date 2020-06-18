@@ -1,0 +1,35 @@
+OBJECT ORIENTED PROGRAMMING: 
+
+Main aim of object orientened programming is to bind together a set of data and functions, so that no other part of the code
+can acces the data except the function.
+
+Principles:
+	
+1. Abstraction
+2. Encapsulation (Data Hiding)
+3. Inheritence
+4. Polymorphism
+
+
+
+CLASS: Building blocks of OOP. A class is a user-defined data type, which holds its own data members and member functions. 
+These data members and member functions can be accessed and used by creating an instance (object) of the class. 
+
+When a class is defined, no memory is allocated. Memory is only allocated when the class is instantiated( an object of this class is created).
+
+ABSTRACTION: 
+
+Data abstraction means hiding the details of the data/fucntion (how it is implemented) and only showing the essential stuff. 
+
+Abstraction using classes: A class binds together the data members and member functions. It can decide which members will be accesible to the outside world based on the access specifiers.
+Abstraction using header files: A header files lets us use some certain methods but we don't know the internal details about the implementation of the method.
+
+ENCAPSULATION: Groupig together member variables and member functions. Different parts of an organisation can club their data together in different classes. Now, everybody doesn't need to know
+about eacha nd every data. If a data is required, one part can talk to another --> This leads to data hiding.
+
+INHERITENCE: The capability of a class to derive properties and characteristics from another class is called inheritence. 
+
+Sub-class: The class which inherits the properties.
+Super-class: The class from which the properties are inherited.
+
+---> Inheritence supports reusablity as some properties can be inherited and used again by a number of classes. 
