@@ -22,6 +22,7 @@ Time Complexity: Adjacency Matrix Representation O(V^2)
 
 1. This does not work for negative weights
 2. This finds all shortest paths from a source to all the vertices
+3. To print the Shortest Path, we maintain a parent array. parent of the source is set to -1
 
 */
 
@@ -33,6 +34,17 @@ Time Complexity: Adjacency Matrix Representation O(V^2)
 using namespace std;
 
 #define V 9
+
+void printPath(vector<int>&parent, int src){
+	if(parent[src]==-1){
+	    cout<<src<<" ";
+		return;
+	}
+	
+	printPath(parent, parent[src]);
+	
+	cout<<src<<" ";
+}
 
 int getMinDistance(vector<int>&distance, vector<int>&included){
 	
@@ -54,6 +66,8 @@ void dijkstra(int graph[V][V], int src){
 	
 	vector<int>included(V, false);
 	vector<int>distance(V, INT_MAX);
+	vector<int>parent(V);
+	parent[src] = -1;
 	
 	distance[src] = 0;
 	int count = 0;
@@ -64,8 +78,11 @@ void dijkstra(int graph[V][V], int src){
 		/* Update Distances */
 		
 		for(int i=0; i<V; i++){
-			if(!included[i] && graph[nodeToInclude][i] !=0 && distance[nodeToInclude] + graph[nodeToInclude][i] < distance[i])
+			if(!included[i] && graph[nodeToInclude][i] !=0 && distance[nodeToInclude] + graph[nodeToInclude][i] < distance[i]){
 				distance[i] = distance[nodeToInclude] + graph[nodeToInclude][i];
+				parent[i] = nodeToInclude;
+				cout<<"Parent of "<<i<<" is "<<nodeToInclude<<"\n";
+			}
 		}
 		
 		count ++;
@@ -73,8 +90,11 @@ void dijkstra(int graph[V][V], int src){
 	
 	/* Printing result */
 	
-	for(int i=0; i<V; i++)
+	for(int i=0; i<V; i++){
 		cout<<distance[i]<<" ";
+		printPath(parent, i);
+		cout<<endl;
+	}
 	
 }
 
