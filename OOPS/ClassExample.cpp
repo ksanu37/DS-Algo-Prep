@@ -6,6 +6,10 @@ An object can occupy space in both stack and heap.
 
 Accessors and mutators -> Property functions. Data members are the properties of an object, together these functions can access and mutate the values
 
+Function body can be written both inside and outside of a class. When written inside, the functions become inline
+
+On the other hand, when written outside they are not inline.
+
 */
 
 
@@ -54,7 +58,14 @@ class Rectangle{          // size of this class = 0, size of an object of this c
 	int perimeter(){
 		return 2*(length+breadth);
 	}
+	
+	bool isSqure();
 };
+
+
+bool Rectangle::isSqure(){     // Function declaration outside   return_type classname :: functionName()    :: is called the scope resolution operator
+	return length==breadth;
+}
 
 
 int main(){
