@@ -1,0 +1,33 @@
+/* Static data members and Static member functions 
+
+These members are called class fields as well as these are common to all the objects of a class and can also be 
+called using the classname operator.
+
+Static Data Members:
+		The static data members are declared inside the class but they are defined outside the class, using the scope resolution operator. 
+
+example:
+
+class A {
+int x;
+public:
+static int count;     -------> Declaration
+};
+
+
+int A::count = 0;    -------> Definition
+
+
+Static Member Functions:
+		The static member functions can not access non-static members of a class, they can only access static members of a class. 
+		
+		As they are common to all the objects, if they acesss a non-static member, this will cause ambiguity. 
+
+
+---> Static Member functions don't have this pointer
+---> Static Member functions can't be overloaded, can't be virtual
+----> A static member function can't be declared const, volatile or const-volatile
+
+
+An inner class can access only the static members of a class.  An outer class can create objects of its inner class. 
+*/

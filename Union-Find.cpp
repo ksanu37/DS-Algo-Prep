@@ -26,7 +26,7 @@ Graph* createGraph(int V, int E){
 	Graph *graph = new Graph();
 	graph->V = V;
 	graph->E = E;
-	graph->	edge = new Edge(E*sizeof(Edge));
+	graph->	edge = new Edge[E*sizeof(Edge)];
 	
 	return graph;
 }
@@ -62,6 +62,8 @@ bool isCyclic(Graph * graph){
 			return true;
 		union(parent, x, y);
 	}
+	
+	return false;
 }
 
 
